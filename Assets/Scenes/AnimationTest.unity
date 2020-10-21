@@ -167,9 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ece4d9cb61f8479ea577110806f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kotorDir: D:\Program Files\Star Wars - KotOR
-  targetGame: 1
-  entryModule: 
+  kotorDir: E:\\Games\\SteamLibrary\\steamapps\\common\\Knights of the Old Republic
+    II
+  targetGame: 2
+  entryModuleID: 72
 --- !u!81 &500571093
 AudioListener:
   m_ObjectHideFlags: 0

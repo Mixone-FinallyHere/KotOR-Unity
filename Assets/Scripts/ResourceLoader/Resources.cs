@@ -7,9 +7,100 @@ namespace KotORVR
 {
 	public enum Game
 	{
-		KotOR = 1,
+		//KotOR = 1,
 		TSL = 2
-	}
+	}    
+
+    public enum ModulesTSL
+    {
+        M_303NAR,
+        M_421DXN,
+        M_901MAL,
+        M_403DXN,
+        M_104PER,
+        M_903MAL,
+        M_501OND,
+        M_004EBO,
+        M_231TEL,
+        M_102PER,
+        M_203TEL,
+        M_401DXN,
+        M_209TEL,
+        M_233TEL,
+        M_003EBO,
+        M_512OND,
+        M_506OND,
+        M_304NAR,
+        M_404DXN,
+        M_906MAL,
+        M_208TEL,
+        M_604DAN,
+        M_502OND,
+        M_211TEL,
+        M_007EBO,
+        M_103PER,
+        M_505OND,
+        M_511OND,
+        M_352NAR,
+        M_201TEL,
+        M_602DAN,
+        M_904MAL,
+        M_152HAR,
+        M_005EBO,
+        M_650DAN,
+        M_371NAR,
+        M_232TEL,
+        M_510OND,
+        M_601DAN,
+        M_503OND,
+        M_262TEL,
+        M_261TEL,
+        M_402DXN,
+        M_006EBO,
+        M_411DXN,
+        M_301NAR,
+        M_410DXN,
+        M_107PER,
+        M_851NIH,
+        M_220TEL,
+        M_305NAR,
+        M_853NIH,
+        M_202TEL,
+        M_702KOR,
+        M_852NIH,
+        M_302NAR,
+        M_905MAL,
+        M_154HAR,
+        M_204TEL,
+        M_105PER,
+        M_907MAL,
+        M_221TEL,
+        M_002EBO,
+        M_101PER,
+        M_153HAR,
+        M_603DAN,
+        M_902MAL,
+        M_222TEL,
+        M_205TEL,
+        M_711KOR,
+        M_710KOR,
+        M_351NAR,
+        M_001EBO,
+        M_306NAR,
+        M_950COR,
+        M_151HAR,
+        M_701KOR,
+        M_610DAN,
+        M_207TEL,
+        M_106PER,
+        M_605DAN,
+        M_504OND
+    }
+
+    public enum ModulesKotor
+    {
+
+    }
 
 	public enum ResourceType
 	{
