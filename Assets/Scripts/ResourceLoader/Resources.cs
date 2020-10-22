@@ -259,8 +259,9 @@ namespace KotORVR
 				Debug.Log("Missing 2da: " + resref);
 				return null;
 			} else {
-				_2da = new _2DAObject(stream);
-				loaded2das.Add(resref, _2da);
+                Debug.Log("2DA contents of " + resref);
+				_2da = new _2DAObject(stream, resref);
+				loaded2das.Add(resref, _2da);                
 				return _2da;
 			}
 		}

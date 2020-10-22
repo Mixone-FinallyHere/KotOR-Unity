@@ -11,7 +11,9 @@ namespace KotORVR
 
 		public Game targetGame = Game.TSL;
 
-        public ModulesTSL entryModuleID = ModulesTSL.EBO001;        
+        public ModulesTSL entryModuleID = ModulesTSL.EBO001;
+
+        private Module loadedModule = null;
 
         private string[] ModuleTSLStr =
         {
@@ -25,21 +27,24 @@ namespace KotORVR
 
         public void Awake()
 		{
-			Resources.Init(kotorDir, targetGame);
+			Resources.Init(kotorDir, Game.TSL);
 		}
 
         [Button]
         public void LoadMap()
         {
-            Resources.Init(kotorDir, targetGame);
+            Resources.Init(kotorDir, Game.TSL);
             string entryModule = ModuleTSLStr[(int)entryModuleID];
-            Module mod = Module.Load(entryModule);
+            loadedModule = Module.Load(entryModule);
         }
 
         public void Start()
 		{
             string entryModule = ModuleTSLStr[(int)entryModuleID];
-            Module mod = Module.Load(entryModule);
+            Module mod;
+            Debug.Log(loadedModule);
+            if (loadedModule == null) mod = Module.Load(entryModule);
+            else mod = loadedModule;
 
 			GameObject.FindGameObjectWithTag("Player").transform.position = mod.entryPosition;
 

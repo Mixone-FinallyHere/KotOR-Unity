@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using UnityEngine;
 
 namespace KotORVR
 {
@@ -20,7 +21,7 @@ namespace KotORVR
 			}
 		}
 
-		public _2DAObject(Stream stream)
+		public _2DAObject(Stream stream, string resref)
 		{
 			byte[] buffer = new byte[8];
 			stream.Read(buffer, 0, 8);
@@ -102,6 +103,17 @@ namespace KotORVR
 					data[i].Add(j, s);
 				}
 			}
+            /*
+            string path = "Assets/Resources/2DAExport/"+resref+".txt";
+            StreamWriter writer = new StreamWriter(path, true);
+            writer.WriteLine(string.Join(",", columnNames));
+            foreach (Dictionary<int, string> dataDict in data)
+            {
+                writer.WriteLine(string.Join(",", dataDict.Values));
+            }
+            writer.Close();
+            */           
+            
 		}
 	}
 }
