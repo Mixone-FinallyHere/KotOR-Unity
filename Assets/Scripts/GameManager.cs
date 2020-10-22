@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using UnityEditor;
+using EasyButtons;
 using UnityEngine;
 
 namespace KotORVR
@@ -10,16 +11,16 @@ namespace KotORVR
 
 		public Game targetGame = Game.TSL;
 
-        public ModulesTSL entryModuleID = ModulesTSL.M_001EBO;        
+        public ModulesTSL entryModuleID = ModulesTSL.EBO001;        
 
         private string[] ModuleTSLStr =
         {
-            "303NAR","421DXN","901MAL","403DXN","104PER","903MAL","501OND","004EBO","231TEL","102PER","203TEL","401DXN","209TEL","233TEL","003EBO",
-            "512OND","506OND","304NAR","404DXN","906MAL","208TEL","604DAN","502OND","211TEL","007EBO","103PER","505OND","511OND","352NAR","201TEL",
-            "602DAN","904MAL","152HAR","005EBO","650DAN","371NAR","232TEL","510OND","601DAN","503OND","262TEL","261TEL","402DXN","006EBO","411DXN",
-            "301NAR","410DXN","107PER","851NIH","220TEL","305NAR","853NIH","202TEL","702KOR","852NIH","302NAR","905MAL","154HAR","204TEL","105PER",
-            "907MAL","221TEL","002EBO","101PER","153HAR","603DAN","902MAL","222TEL","205TEL","711KOR","710KOR","351NAR","001EBO","306NAR","950COR",
-            "151HAR","701KOR","610DAN","207TEL","106PER","605DAN","504OND"
+            "950COR","601DAN","602DAN","603DAN","604DAN","605DAN","610DAN","650DAN","401DXN","402DXN","403DXN","404DXN","410DXN","411DXN","421DXN",
+            "001EBO","002EBO","003EBO","004EBO","005EBO","006EBO","007EBO","151HAR","152HAR","153HAR","154HAR","701KOR","702KOR","710KOR","711KOR",
+            "901MAL","902MAL","903MAL","904MAL","905MAL","906MAL","907MAL","301NAR","302NAR","303NAR","304NAR","305NAR","306NAR","351NAR","352NAR",
+            "371NAR","851NIH","852NIH","853NIH","501OND","502OND","503OND","504OND","505OND","506OND","510OND","511OND","512OND","101PER","102PER",
+            "103PER","104PER","105PER","106PER","107PER","201TEL","202TEL","203TEL","204TEL","205TEL","207TEL","208TEL","209TEL","211TEL","220TEL",
+            "221TEL","222TEL","231TEL","232TEL","233TEL","261TEL","262TEL"
         };
 
         public void Awake()
@@ -27,12 +28,17 @@ namespace KotORVR
 			Resources.Init(kotorDir, targetGame);
 		}
 
-		public void Start()
+        [Button]
+        public void LoadMap()
+        {
+            Resources.Init(kotorDir, targetGame);
+            string entryModule = ModuleTSLStr[(int)entryModuleID];
+            Module mod = Module.Load(entryModule);
+        }
+
+        public void Start()
 		{
             string entryModule = ModuleTSLStr[(int)entryModuleID];
-
-            string[] files = Directory.GetFiles(kotorDir);
-
             Module mod = Module.Load(entryModule);
 
 			GameObject.FindGameObjectWithTag("Player").transform.position = mod.entryPosition;

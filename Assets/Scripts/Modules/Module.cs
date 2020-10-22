@@ -13,8 +13,12 @@ namespace KotORVR
 		public Quaternion entryRotation { get; private set; }
 		public AudioClip ambientMusic { get; private set; }
 		public AudioClip ambientSound { get; private set; }
+        GameObject daddy;
+        GameObject charsH = new GameObject("Characters");
+        GameObject doorsH = new GameObject("Doors");
+        GameObject placesH = new GameObject("Placeables");
 
-		public static Module Load(string name)
+        public static Module Load(string name)
 		{
 			Module module = new Module(name);
 			Resources.AddModule(module);
@@ -42,11 +46,16 @@ namespace KotORVR
 			git = new GFFLoader(rim.GetResource(areaName, ResourceType.GIT)).GetRoot();
 
 			Dictionary<string, Vector3> layout = Resources.LoadLayout(areaName);
+            daddy = new GameObject(name);
+            charsH.transform.parent = daddy.transform;
+            doorsH.transform.parent = daddy.transform;
+            placesH.transform.parent = daddy.transform;
 			foreach (var value in layout) {
 				string resref = value.Key.ToLower();
 
 				GameObject room = Resources.LoadModel(resref);
 				room.transform.position = value.Value;
+                room.transform.parent = daddy.transform;
 			}
 
 			int musicId = git["AreaProperties"]["MusicDay"].GetValue<int>();
@@ -71,6 +80,7 @@ namespace KotORVR
 				character = Resources.LoadCharacter(c["TemplateResRef"].GetValue<string>());
 				character.gameObject.transform.position = position;
 				character.gameObject.transform.rotation = rotation;
+                character.gameObject.transform.parent = charsH.transform;
 			}
 		}
 
@@ -88,6 +98,7 @@ namespace KotORVR
 				door = Resources.LoadDoor(d["TemplateResRef"].GetValue<string>());
 				door.gameObject.transform.position = position;
 				door.gameObject.transform.rotation = rotation;
+                door.gameObject.transform.parent = doorsH.transform;
 			}
 		}
 
@@ -105,6 +116,7 @@ namespace KotORVR
 				placeable = Resources.LoadPlaceable(p["TemplateResRef"].GetValue<string>());
 				placeable.gameObject.transform.position = position;
 				placeable.gameObject.transform.rotation = rotation;
+                placeable.gameObject.transform.parent = placesH.transform;
 			}
 		}
 

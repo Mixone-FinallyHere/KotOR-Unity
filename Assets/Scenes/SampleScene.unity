@@ -418,10 +418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583ece4d9cb61f8479ea577110806f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kotorDir: E:\\Games\\SteamLibrary\\steamapps\\common\\Knights of the Old Republic
-    II
+  kotorDir: E:\Games\SteamLibrary\steamapps\common\Knights of the Old Republic II
   targetGame: 2
-  entryModuleID: 8
+  entryModuleID: 37
 --- !u!4 &834820328
 Transform:
   m_ObjectHideFlags: 0
