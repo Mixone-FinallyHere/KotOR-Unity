@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
-using Unity.UNetWeaver;
 using UnityEngine;
 
 namespace KotORVR
 {
-	public partial class AuroraModel
+    public partial class AuroraModel
 	{
 		public class Node
 		{

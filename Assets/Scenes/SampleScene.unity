@@ -421,7 +421,7 @@ MonoBehaviour:
   kotorDir: E:\\Games\\SteamLibrary\\steamapps\\common\\Knights of the Old Republic
     II
   targetGame: 2
-  entryModuleID: 39
+  entryModuleID: 8
 --- !u!4 &834820328
 Transform:
   m_ObjectHideFlags: 0
@@ -818,6 +818,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1422967525401417589, guid: 8d8df8d47a50d834194b584dd229da7e,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: bd0bb729cb6159b4ab21c5f62cad24ee, type: 3}
     - target: {fileID: 5569996672115491674, guid: 8d8df8d47a50d834194b584dd229da7e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -826,7 +831,7 @@ PrefabInstance:
     - target: {fileID: 5569996672115491674, guid: 8d8df8d47a50d834194b584dd229da7e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 10.2
       objectReference: {fileID: 0}
     - target: {fileID: 5569996672115491674, guid: 8d8df8d47a50d834194b584dd229da7e,
         type: 3}

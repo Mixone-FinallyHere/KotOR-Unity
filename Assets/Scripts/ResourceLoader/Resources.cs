@@ -7,7 +7,7 @@ namespace KotORVR
 {
 	public enum Game
 	{
-		//KotOR = 1,
+		KotOR = 1,
 		TSL = 2
 	}    
 
@@ -229,10 +229,11 @@ namespace KotORVR
 
 		public static Material LoadMaterial(string diffuse, string lightmap = null)
 		{
-			Material mat = new Material(Shader.Find("Legacy Shaders/Lightmapped/VertexLit"));
-			//string envmap;
+            //Material mat = UnityEngine.Resources.Load("LegacyShader", typeof(Material)) as Material;
+            Material mat = new Material(Shader.Find("Legacy Shaders/Lightmapped/VertexLit"));
+            //string envmap;
 
-			Texture2D tDiffuse = LoadTexture2D(diffuse);
+            Texture2D tDiffuse = LoadTexture2D(diffuse);
 			if (tDiffuse) {
 				mat.SetTexture("_MainTex", tDiffuse);
 			}
