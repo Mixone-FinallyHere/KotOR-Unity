@@ -2,6 +2,12 @@
 
 KotOR-Unity is a conversion layer between BioWare's Odyssey engine, which was used to develop Star Wars Knights of the Old Republic (2), and the Unity engine. The goal is to implement features of the original games inside Unity.
 
+Currently Kotor 1 Loading has been disabled until Module loading has been improved.
+
+Remember to set the games directory in the GameManager Inspector.
+
+Unity Version is 2019.3.13f1
+
 ## Status
 
 Currently the following things are implemented:
@@ -38,9 +44,6 @@ The project uses [NAudio](https://github.com/naudio/NAudio) and [fastJSON](https
 6) Enter the name of the Entry Module you wish to load, module names can be found in {KotOR Directory}/Modules.
 7) Hit play, you should be able to see the desired module load in the scene and move around with a basic 3rd person controller.
 
-## VR Support
-
-VR is working with the oculus rift, future releases will try to generalise this to any headset. In order to run in VR mode, just drag and drop the OVRPlayerController from Assets -> Resources -> PlayerControllers into the scene and make sure to remove any other player controllers.
 
 ## Contributing
 
